@@ -37,5 +37,25 @@ class MySQL {
             throw $e;
         }
     }
+    
+    public function getAllCustomers() {
+        try {
+            $stmt = $this->conn->prepare("SELECT * FROM Customer");
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            return $result;
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
+    
+    public function getAllCustomersJson() {
+        try {
+            $result = $this->getAllCustomers();
+            return json_encode($result);
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
 }
 ?>
