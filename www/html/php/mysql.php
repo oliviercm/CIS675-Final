@@ -17,5 +17,25 @@ class MySQL {
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     }
+    
+    public function getAllEmployees() {
+        try {
+            $stmt = $this->conn->prepare("SELECT * FROM Employee");
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            return $result;
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
+    
+    public function getAllEmployeesJson() {
+        try {
+            $result = $this->getAllEmployees();
+            return json_encode($result);
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
 }
 ?>
