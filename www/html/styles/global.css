@@ -64,6 +64,7 @@ a {
 a:hover {
     text-decoration: underline;
     color: #c75b2d;
+    cursor: pointer;
 }
 a:focus {
     outline-color: transparent;
