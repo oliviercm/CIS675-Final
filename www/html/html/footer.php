@@ -1,3 +1,4 @@
+<hr style="margin: 0; padding: 0; border: 0; height: 24px; box-shadow: inset 0 -24px 24px -24px rgba(0, 0, 0, 0.5);">
 <footer>
     <div class="footer-nav-container">
         <nav class="footer-nav">
