@@ -8,6 +8,8 @@ import {
  */
 
 const buttonUrlMappings = {
+    "all-locations-button": "/php/locations.php",
+    "all-products-button": "/php/products.php",
     "all-employees-button": "/php/employees.php",
     "all-customers-button": "/php/customers.php",
 };

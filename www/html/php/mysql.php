@@ -57,5 +57,45 @@ class MySQL {
             throw $e;
         }
     }
+    
+    public function getAllLocations() {
+        try {
+            $stmt = $this->conn->prepare("SELECT * FROM Location");
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            return $result;
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
+    
+    public function getAllLocationsJson() {
+        try {
+            $result = $this->getAllLocations();
+            return json_encode($result);
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
+    
+    public function getAllProducts() {
+        try {
+            $stmt = $this->conn->prepare("SELECT * FROM Product");
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            return $result;
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
+    
+    public function getAllProductsJson() {
+        try {
+            $result = $this->getAllProducts();
+            return json_encode($result);
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
 }
 ?>
