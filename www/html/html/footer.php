@@ -32,7 +32,7 @@
     <hr>
     <nav class="footer-logo-container">
         <a href="/index.php">
-            <img src="/images/logo-transparent.png" class="logo">
+            <img src="/images/logo.png" class="logo">
         </a>
     </nav>
 </footer>

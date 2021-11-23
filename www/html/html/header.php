@@ -1,7 +1,7 @@
 <header>
     <div class="logo-container">
         <a href="/index.php">
-            <img src="/images/logo-transparent.png" class="logo" alt="Pandemic Essentials Logo">
+            <img src="/images/logo.png" class="logo" alt="Pandemic Essentials Logo">
         </a>
     </div>
     <form class="search-form">
