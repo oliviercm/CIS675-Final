@@ -21,3 +21,39 @@
     font-size: 0.9em;
     padding: 1px 0 1px 0;
 }
+
+.main-table-container {
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 8px;
+    margin: 12px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+table, th, td {
+    border: 1px solid rgba(128, 128, 128, 1);
+}
+
+table {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border-spacing: 10px;
+}
+
+th, td {
+    padding: 0.18em;
+}
+
+th {
+    background-color: #3f5472;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    height: 1.5em;
+}
+
+tr:nth-child(odd) {
+    background-color: #dfdfdf;
+}
