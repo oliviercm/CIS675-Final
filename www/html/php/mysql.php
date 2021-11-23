@@ -26,44 +26,12 @@ class MySQL {
         return $instance;
     }
     
-    private function executeQuery($query, ...$args) {
+    public function executeQuery($query, ...$args) {
         try {
             $stmt = $this->conn->prepare($query);
             $stmt->execute($args);
             $result = $stmt->fetchAll();
-            return json_encode($result);
-        } catch (\Throwable $e) {
-            throw $e;
-        }
-    }
-    
-    public function getAllEmployees() {
-        try {
-            return $this->executeQuery("SELECT * FROM Employee");
-        } catch (\Throwable $e) {
-            throw $e;
-        }
-    }
-    
-    public function getAllCustomers() {
-        try {
-            return $this->executeQuery("SELECT * FROM Customer");
-        } catch (\Throwable $e) {
-            throw $e;
-        }
-    }
-    
-    public function getAllLocations() {
-        try {
-            return $this->executeQuery("SELECT * FROM Location");
-        } catch (\Throwable $e) {
-            throw $e;
-        }
-    }
-    
-    public function getAllProducts() {
-        try {
-            return $this->executeQuery("SELECT * FROM Product");
+            return $result;
         } catch (\Throwable $e) {
             throw $e;
         }

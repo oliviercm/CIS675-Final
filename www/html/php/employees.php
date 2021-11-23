@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/php/respondjson.php";
 if ($_SERVER['REQUEST_METHOD'] === "GET") {
     try {
         $db = MySQL::getInstance();
-        $result = $db->getAllEmployees();
+        $result = $db->executeQuery("SELECT * FROM Employee");
         respondJson($result);
     } catch (\Throwable $e) {
         http_response_code(500);
