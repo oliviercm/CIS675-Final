@@ -36,6 +36,9 @@
                     <li>
                         <a id="current-managers-button">Current Managers</a>
                     </li>
+                    <li>
+                        <a id="employee-count-button">Employee Count</a>
+                    </li>
                 </ul>
             </nav>
         </div>

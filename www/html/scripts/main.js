@@ -13,6 +13,7 @@ const buttonUrlMappings = {
     "all-employees-button": "/php/employees.php",
     "all-customers-button": "/php/customers.php",
     "current-managers-button": "/php/currentmanagers.php",
+    "employee-count-button": "/php/employeecount.php",
 };
 
 for (const buttonId in buttonUrlMappings) {
