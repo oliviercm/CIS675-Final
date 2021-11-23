@@ -33,6 +33,9 @@
                     <li>
                         <a id="all-customers-button">All Customers</a>
                     </li>
+                    <li>
+                        <a id="current-managers-button">Current Managers</a>
+                    </li>
                 </ul>
             </nav>
         </div>
