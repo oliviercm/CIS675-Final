@@ -6,7 +6,7 @@ class NegativeStockException extends Exception {}
 class MySQL {
     protected $conn;
 
-    public function __construct() {
+    private function __construct() {
         $host = getenv("MYSQL_HOST");
         $database = getenv("MYSQL_DATABASE");
         $port = getenv("MYSQL_PORT");
@@ -18,21 +18,28 @@ class MySQL {
         $this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     }
     
-    public function getAllEmployees() {
+    public static function getInstance() {
+        static $instance = null;
+        if ($instance === null) {
+            $instance = new MySQL();
+        }
+        return $instance;
+    }
+    
+    private function executeQuery($query, ...$args) {
         try {
-            $stmt = $this->conn->prepare("SELECT * FROM Employee");
-            $stmt->execute();
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute($args);
             $result = $stmt->fetchAll();
-            return $result;
+            return json_encode($result);
         } catch (\Throwable $e) {
             throw $e;
         }
     }
     
-    public function getAllEmployeesJson() {
+    public function getAllEmployees() {
         try {
-            $result = $this->getAllEmployees();
-            return json_encode($result);
+            return $this->executeQuery("SELECT * FROM Employee");
         } catch (\Throwable $e) {
             throw $e;
         }
@@ -40,19 +47,7 @@ class MySQL {
     
     public function getAllCustomers() {
         try {
-            $stmt = $this->conn->prepare("SELECT * FROM Customer");
-            $stmt->execute();
-            $result = $stmt->fetchAll();
-            return $result;
-        } catch (\Throwable $e) {
-            throw $e;
-        }
-    }
-    
-    public function getAllCustomersJson() {
-        try {
-            $result = $this->getAllCustomers();
-            return json_encode($result);
+            return $this->executeQuery("SELECT * FROM Customer");
         } catch (\Throwable $e) {
             throw $e;
         }
@@ -60,19 +55,7 @@ class MySQL {
     
     public function getAllLocations() {
         try {
-            $stmt = $this->conn->prepare("SELECT * FROM Location");
-            $stmt->execute();
-            $result = $stmt->fetchAll();
-            return $result;
-        } catch (\Throwable $e) {
-            throw $e;
-        }
-    }
-    
-    public function getAllLocationsJson() {
-        try {
-            $result = $this->getAllLocations();
-            return json_encode($result);
+            return $this->executeQuery("SELECT * FROM Location");
         } catch (\Throwable $e) {
             throw $e;
         }
@@ -80,19 +63,7 @@ class MySQL {
     
     public function getAllProducts() {
         try {
-            $stmt = $this->conn->prepare("SELECT * FROM Product");
-            $stmt->execute();
-            $result = $stmt->fetchAll();
-            return $result;
-        } catch (\Throwable $e) {
-            throw $e;
-        }
-    }
-    
-    public function getAllProductsJson() {
-        try {
-            $result = $this->getAllProducts();
-            return json_encode($result);
+            return $this->executeQuery("SELECT * FROM Product");
         } catch (\Throwable $e) {
             throw $e;
         }
