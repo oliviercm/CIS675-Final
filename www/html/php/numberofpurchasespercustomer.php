@@ -5,10 +5,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/php/respondjson.php";
 if ($_SERVER['REQUEST_METHOD'] === "GET") {
     try {
         $db = MySQL::getInstance();
-        // Get employees who are also current managers (exist)
-        $result = $db->executeQuery("SELECT *
-        FROM Employee AS e
-        WHERE EXISTS (SELECT 1 FROM Manager as m WHERE m.employeeId = e.id);");
+        // Get total amount of purchases per customer for customers that have purchased at least 1 item (having)
+        $result = $db->executeQuery("SELECT customerId, SUM(p.amount) as total FROM Purchase p GROUP BY customerId HAVING total > 0;");
         respondJson($result);
     } catch (\Throwable $e) {
         http_response_code(500);

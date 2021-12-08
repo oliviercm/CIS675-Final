@@ -36,5 +36,14 @@ class MySQL {
             throw $e;
         }
     }
+    
+    public function query($query) {
+        try {
+            $this->conn->query($query);
+            return true;
+        } catch (\Throwable $e) {
+            throw $e;
+        }
+    }
 }
 ?>
