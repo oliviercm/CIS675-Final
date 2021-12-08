@@ -8,12 +8,12 @@ import {
  */
 
 const buttonUrlMappings = {
-    "all-locations-button": "/php/locations.php",
-    "all-products-button": "/php/products.php",
-    "all-employees-button": "/php/employees.php",
-    "all-customers-button": "/php/customers.php",
-    "current-managers-button": "/php/currentmanagers.php",
-    "employee-count-button": "/php/employeecount.php",
+    "all-locations-button": "/php/data/general/locations.php",
+    "all-products-button": "/php/data/general/products.php",
+    "all-employees-button": "/php/data/general/employees.php",
+    "all-customers-button": "/php/data/general/customers.php",
+    "current-managers-button": "/php/data/specific/currentmanagers.php",
+    "employee-count-button": "/php/data/specific/employeecount.php",
 };
 
 for (const buttonId in buttonUrlMappings) {
