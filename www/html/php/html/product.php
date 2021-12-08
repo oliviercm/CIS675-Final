@@ -47,15 +47,12 @@
                 </div>
                 <div class="grid-item">
                     <button id="add-to-cart-button" type="button" class="add-to-cart-button"><span class="material-icons">shopping_cart</span> Add to Cart</button>
-                    <a href="../confirmation.php"><button type="button" class="buy-now-button">Buy Now</button></a>
+                    <a><button type="button" class="buy-now-button">Buy Now</button></a>
                 </div>
             </div>
         </div>
     </main>
     <?php include $_SERVER['DOCUMENT_ROOT']."/html/footer.php";?>
-    <template id="other-product-template">
-        <div id="other-product-2"><a><img style="max-width: 128px; max-height: 128px;"></a></div>
-    </template>
     <script src="../../scripts/render-product-listing.js" type="module"></script>
 </body>
 
