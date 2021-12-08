@@ -1,6 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . "/php/mysql.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/php/respondjson.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/util/mysql.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/util/respondjson.php";
 
 if ($_SERVER['REQUEST_METHOD'] === "GET") {
     try {

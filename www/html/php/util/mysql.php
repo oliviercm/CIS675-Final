@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . "/php/dotenv.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/php/util/dotenv.php";
 
 class NegativeStockException extends Exception {}
 
