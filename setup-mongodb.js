@@ -330,6 +330,13 @@ db.products.createIndex({
  * END SETUP
  */
 
+// FIND EMPLOYEES WITH SALARY > 100000
+db.employees.find({
+    salary: {
+        $gte: 100000,
+    }
+});
+
 // UPDATE EMPLOYEE WORK LOCATION
 employeeToUpdate = db.employees.find({
     firstname: "Romeo",
