@@ -38,9 +38,15 @@ import {
         // If there is low stock, display a different message.
         if (currentProduct.stock > LOW_STOCK_CUTOFF) {
             productStockElement.textContent = `In Stock.`;
-        } else {
+        } else if (currentProduct.stock > 0) {
             productStockElement.textContent = `Only ${currentProduct.stock} left in stock - order soon.`;
             productStockElement.style.color = `#b12704`;
+        } else {
+            productStockElement.textContent = `Out of stock!`;
+            productStockElement.style.color = `#b12704`;
+            
+            document.getElementById("add-to-cart-button").disabled = true
+            document.getElementById("buy-now-button").disabled = true
         };
 
         const productPriceElement = document.getElementById("product-listing-price");

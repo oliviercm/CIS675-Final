@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
     } else { // Specific product ID specified - fetch specific product
         try {
             $db = MySQL::getInstance();
-            $result = $db->executeQuery("SELECT * FROM Product WHERE id = ?;", $_GET["id"]);
+            $result = $db->executeQuery("SELECT p.id, p.description, p.price, p.name, SUM(i.amount) as stock FROM Product p LEFT JOIN Inventory i ON i.productId = p.id WHERE p.id = ?;", $_GET["id"]);
             if ($result === "false") {
                 http_response_code(404);
                 echo("Error: Product not found.");

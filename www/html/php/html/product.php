@@ -47,7 +47,7 @@
                 </div>
                 <div class="grid-item">
                     <button id="add-to-cart-button" type="button" class="add-to-cart-button"><span class="material-icons">shopping_cart</span> Add to Cart</button>
-                    <a><button type="button" class="buy-now-button">Buy Now</button></a>
+                    <a><button id="buy-now-button" type="button" class="buy-now-button">Buy Now</button></a>
                 </div>
             </div>
         </div>
