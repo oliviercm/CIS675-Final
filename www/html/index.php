@@ -37,7 +37,22 @@
                         <a id="current-managers-button">Current Managers</a>
                     </li>
                     <li>
-                        <a id="employee-count-button">Employee Count</a>
+                        <a id="employee-count-button">Employee Count Per Location</a>
+                    </li>
+                    <li>
+                        <a id="employee-high-salary-button">Employees with Salary > $100,000</a>
+                    </li>
+                    <li>
+                        <a id="location-exclusive-products-button">Products exclusive to Location IDs 1, 2, 3</a>
+                    </li>
+                    <li>
+                        <a id="customer-total-purchases-button">Total Purchases per Customer</a>
+                    </li>
+                    <li>
+                        <a id="products-in-stock-button">Products in Stock</a>
+                    </li>
+                    <li>
+                        <a id="products-not-in-stock-button">Products not in Stock</a>
                     </li>
                 </ul>
             </nav>

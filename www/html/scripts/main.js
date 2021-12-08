@@ -14,6 +14,11 @@ const buttonUrlMappings = {
     "all-customers-button": "/php/data/general/customers.php",
     "current-managers-button": "/php/data/specific/currentmanagers.php",
     "employee-count-button": "/php/data/specific/employeecount.php",
+    "employee-high-salary-button": "/php/data/specific/employeeswithhighsalary.php",
+    "location-exclusive-products-button": "/php/data/specific/locationexclusiveproducts.php",
+    "customer-total-purchases-button": "/php/data/specific/totalpurchasespercustomer.php",
+    "products-in-stock-button": "/php/data/specific/productsinstock.php",
+    "products-not-in-stock-button": "/php/data/specific/productsnotinstock.php",
 };
 
 for (const buttonId in buttonUrlMappings) {
