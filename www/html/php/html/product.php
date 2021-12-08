@@ -54,6 +54,7 @@
     </main>
     <?php include $_SERVER['DOCUMENT_ROOT']."/html/footer.php";?>
     <script src="../../scripts/render-product-listing.js" type="module"></script>
+    <script src="../../scripts/handle-buy-product.js" type="module"></script>
 </body>
 
 </html>
